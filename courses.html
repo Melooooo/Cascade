@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="styles.css">
+        <title>Cornell Cascade</title>
+    </head>
+    <body>
+        <div class="navbar">
+            <div id="HASH" class="container">
+                <span class="navbar-left">
+                    <a href="courses.html">Cascade</a>
+                </span>
+                <span class="navbar-signedInAs">
+                    <p>signed in as </p><?php echo $_POST["net_id"]; ?>
+                </span>
+                <span class="navbar-right">
+                    <a href="">Sign out</a>
+                    <!-- the following div is for google one tap sign in-->
+                    <div id="g_id_onload"
+                        data-client_id="YOUR_GOOGLE_CLIENT_ID"
+                        data-auto_select="true"
+                        data-login_uri="https://your.domain/your_login_endpoint">
+                    </div>
+                </span>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="container">
+            <h1>Enter a course ID to see how many others are<br>
+                interested in the same section:</h1>
+            <form action="/form/submit" method="get">
+                <div class="course input">
+                    <input type="number" min="0" max="999999"
+                        id="inputCourseID" placeholder="Enter Course ID"
+                        name="course_number" style="height:25px;width:170px;font-size:16pt" required>
+                </div>
+                <br>
+                <div class="submit">
+                    <input type="submit" value="Add Course"
+                    style="height:30px;width:130px;font-size:16pt"/>
+                </div>
+            </form>
+            <p class="disclaimer">
+                Find course ID on <a href="https://classes.cornell.edu/browse/roster/FA20"
+                    target="_blank" style="color: #630000">Class Roster</a>.
+            </p>
+        </div>
+        <div class="container enrolled">
+            <h2>You're currently taking:</h2>
+            <table>
+                <!-- TODO -- >
+            </table>
+        </div>
+        <script src="main.js"></script>
+    </body>
+</html>
